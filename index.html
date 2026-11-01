@@ -4,39 +4,43 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Object to the Dalston LTN – write your email in 60 seconds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14213d; --muted:#5b6475; --bg:#fff8ec; --card:#ffffff;
-    --accent:#e63946; --accent2:#ffb703; --ok:#2a9d8f; --line:#e7dcc8;
+    --ink:#23261F; --muted:#565A4E; --bg:#FAF9F4; --card:#ffffff;
+    --accent:#C8231B; --accent2:#23261F; --ok:#1E7B3C; --line:#DEDACB;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
-  header{background:var(--ink);color:#fff;padding:22px 18px 26px;position:relative;overflow:hidden}
-  header:after{content:"";position:absolute;right:-70px;top:-70px;width:150px;height:150px;border-radius:50%;background:var(--accent2);opacity:.9}
-  header .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:4px;position:relative;z-index:1}
-  header h1{font-size:26px;line-height:1.15;margin:10px 0 6px;position:relative;z-index:1;max-width:78%}
-  header p{margin:0;color:#d9deea;font-size:15px;position:relative;z-index:1;max-width:90%}
+  body{margin:0;font-family:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+  header{background:var(--bg);color:var(--ink);position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+  header .hero{max-width:640px;margin:0 auto;padding:22px 18px 6px}
+  header .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:4px}
+  header h1{font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;font-size:46px;line-height:.94;text-transform:uppercase;margin:12px 0 8px;letter-spacing:-.005em}
+  header h1 span{color:var(--accent)}
+  header p{margin:0;color:var(--ink);font-size:16px;font-weight:500;max-width:34em}
+  header .scene{display:block;width:100%;max-width:900px;height:auto;aspect-ratio:559/170;margin:10px auto 0}
   main{max-width:640px;margin:0 auto;padding:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
   .step{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:17px}
-  .step b{background:var(--accent2);color:var(--ink);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:15px;flex:none}
+  .step b{background:var(--accent2);color:#fff;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:15px;flex:none}
   label.chk{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;cursor:pointer}
   label.chk input{margin-top:3px;width:20px;height:20px;accent-color:var(--accent);flex:none}
   label.chk small{display:block;color:var(--muted)}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .field{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
   .field span{font-size:13px;color:var(--muted)}
-  input[type=text],textarea{font:inherit;padding:10px;border:1px solid #cfc4ae;border-radius:8px;width:100%;background:#fff;color:var(--ink)}
+  input[type=text],textarea{font:inherit;padding:10px;border:1px solid #BDB9A6;border-radius:8px;width:100%;background:#fff;color:var(--ink)}
   textarea#body{min-height:340px;font-size:15px}
   .subjectline{font-weight:600}
   .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   button,a.btn{font:inherit;font-weight:700;border:0;border-radius:10px;padding:13px 16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
   .primary{background:var(--accent);color:#fff;flex:1 1 100%;justify-content:center;font-size:18px}
   .secondary{background:var(--ink);color:#fff}
-  .ghost{background:#f1e8d6;color:var(--ink)}
+  .ghost{background:#EEEBDD;color:var(--ink)}
   .note{font-size:13px;color:var(--muted)}
   .warn{background:#fff3cd;border:1px solid #f0d27a;padding:10px;border-radius:8px;font-size:14px}
-  .pill{display:inline-block;background:#eaf6f4;color:var(--ok);font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px}
+  .pill{display:inline-block;background:#E6F2EA;color:var(--ok);font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px}
   footer{max-width:640px;margin:0 auto;padding:0 16px 30px;font-size:12px;color:var(--muted)}
   .chip{display:inline-block;margin:4px 6px 0 0;padding:6px 10px;border-radius:999px;border:1px solid var(--accent);background:#fff;color:var(--accent);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
   .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none}
@@ -45,9 +49,124 @@
 </head>
 <body>
 <header>
+ <div class="hero">
   <span class="tag">Statutory objection</span>
-  <h1>Not without the data.</h1>
+  <h1>Not without <span>the data.</span></h1>
   <p>Object to the Dalston LTN traffic orders. Your email is written for you. Check it, add your own words, then press send.</p>
+ </div>
+<svg class="scene" aria-hidden="true" viewBox="0 44 559 170" preserveAspectRatio="xMidYMax slice">
+<defs>
+<pattern id="win" width="13" height="15" patternUnits="userSpaceOnUse"><rect x="3" y="4" width="6" height="7" fill="#C2BFA2"></rect></pattern>
+<symbol id="car" viewBox="0 0 46 20"><path d="M2 10 Q2 7 6 7 L12 7 L17 1.5 L31 1.5 L37 7 L42 7 Q45 7 45 10 L45 15 L2 15 Z"></path><path d="M18.5 3 L23 3 L23 7 L14.5 7 Z M25 3 L30 3 L34 7 L25 7 Z" fill="#D9D6C2"></path><circle cx="11" cy="15.5" r="4" fill="#1A1C17"></circle><circle cx="36" cy="15.5" r="4" fill="#1A1C17"></circle><circle cx="11" cy="15.5" r="1.6" fill="#8B8877"></circle><circle cx="36" cy="15.5" r="1.6" fill="#8B8877"></circle></symbol>
+<symbol id="puff" viewBox="0 0 30 18"><circle cx="8" cy="11" r="6"></circle><circle cx="16" cy="7" r="7"></circle><circle cx="23" cy="11" r="6"></circle></symbol>
+</defs>
+<g transform="translate(0,30)">
+<g fill="#A49E83" opacity="0.45">
+<ellipse cx="70" cy="40" rx="110" ry="26"></ellipse>
+<ellipse cx="300" cy="22" rx="150" ry="22"></ellipse>
+<ellipse cx="500" cy="48" rx="120" ry="28"></ellipse>
+</g>
+</g>
+<g fill="#A9A68E">
+<rect x="0" y="86" width="64" height="80"></rect>
+<rect x="72" y="62" width="58" height="104"></rect>
+<rect x="140" y="96" width="74" height="70"></rect>
+<rect x="336" y="76" width="66" height="90"></rect>
+<rect x="410" y="100" width="58" height="66"></rect>
+<rect x="476" y="66" width="83" height="100"></rect>
+</g>
+<g fill="url(#win)">
+<rect x="0" y="92" width="64" height="70"></rect>
+<rect x="72" y="68" width="58" height="94"></rect>
+<rect x="140" y="102" width="74" height="60"></rect>
+<rect x="336" y="82" width="66" height="80"></rect>
+<rect x="410" y="106" width="58" height="56"></rect>
+<rect x="476" y="72" width="83" height="90"></rect>
+</g>
+<g transform="translate(0,30)">
+<g stroke="#8E8B78" stroke-width="3" stroke-linecap="round" fill="none">
+<line x1="440" y1="34" x2="440" y2="70"></line>
+<line x1="440" y1="34" x2="440" y2="12"></line>
+<line x1="440" y1="34" x2="459" y2="45"></line>
+<line x1="440" y1="34" x2="421" y2="45"></line>
+</g>
+<rect x="268" y="74" width="9" height="62" fill="#3F4238"></rect>
+<circle cx="272" cy="52" r="36" fill="#B6B39C"></circle>
+<path d="M248 36 q10 -10 22 -4 q6 8 -2 14 q-4 10 -14 6 q-10 -4 -6 -16 Z M276 54 q12 -6 20 4 q4 12 -6 18 q-10 2 -14 -8 q-4 -8 0 -14 Z" fill="#8A8B6A"></path>
+<g fill="#8F8A76" opacity="0.7">
+<use href="#puff" x="232" y="54" width="44" height="26"></use>
+<use href="#puff" x="276" y="28" width="38" height="22"></use>
+</g>
+</g>
+<g>
+<rect x="38" y="122" width="6" height="44" fill="#3F4238"></rect><circle cx="41" cy="114" r="20" fill="#8A8F5E"></circle><circle cx="34" cy="108" r="9" fill="#9AA06C"></circle>
+<rect x="222" y="126" width="6" height="40" fill="#3F4238"></rect><circle cx="225" cy="118" r="18" fill="#7E8352"></circle>
+<rect x="318" y="128" width="6" height="38" fill="#3F4238"></rect><circle cx="321" cy="120" r="16" fill="#8A8F5E"></circle>
+<rect x="506" y="124" width="6" height="42" fill="#3F4238"></rect><circle cx="509" cy="115" r="20" fill="#7E8352"></circle><circle cx="502" cy="109" r="8" fill="#9AA06C"></circle>
+</g>
+<rect x="0" y="160" width="559" height="8" fill="#B8B49C"></rect>
+<rect x="0" y="166" width="559" height="2" fill="#8B8877"></rect>
+<rect x="0" y="168" width="559" height="34" fill="#8E9086"></rect>
+<line x1="0" y1="185" x2="559" y2="185" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="10 9"></line>
+<g>
+<use href="#car" x="4" y="164" width="46" height="20" fill="#6E7A86"></use>
+<g>
+<rect x="58" y="128" width="100" height="54" rx="5" fill="#C8231B"></rect>
+<rect x="58" y="153" width="100" height="3" fill="#8E1712"></rect>
+<g fill="#E3E0CF"><rect x="64" y="134" width="16" height="13" rx="2"></rect><rect x="84" y="134" width="16" height="13" rx="2"></rect><rect x="104" y="134" width="16" height="13" rx="2"></rect><rect x="124" y="134" width="16" height="13" rx="2"></rect><rect x="144" y="134" width="10" height="13" rx="2"></rect>
+<rect x="64" y="160" width="16" height="12" rx="2"></rect><rect x="84" y="160" width="16" height="12" rx="2"></rect><rect x="104" y="160" width="16" height="12" rx="2"></rect><rect x="124" y="160" width="16" height="12" rx="2"></rect><rect x="144" y="160" width="10" height="18" rx="2"></rect></g>
+<circle cx="76" cy="182" r="5" fill="#1A1C17"></circle><circle cx="140" cy="182" r="5" fill="#1A1C17"></circle>
+</g>
+<use href="#car" x="166" y="164" width="46" height="20" fill="#9A6B4A"></use>
+<g>
+<rect x="220" y="152" width="58" height="28" rx="4" fill="#7D8172"></rect>
+<rect x="264" y="157" width="12" height="9" rx="1.5" fill="#D9D6C2"></rect>
+<circle cx="232" cy="181" r="4" fill="#1A1C17"></circle><circle cx="266" cy="181" r="4" fill="#1A1C17"></circle>
+</g>
+<use href="#car" x="286" y="164" width="46" height="20" fill="#4E5A55"></use>
+<g>
+<rect x="340" y="148" width="62" height="32" rx="4" fill="#ECEADF"></rect>
+<rect x="340" y="164" width="62" height="5" fill="#2C6E9B"></rect>
+<rect x="388" y="153" width="12" height="9" rx="1.5" fill="#9DB4C2"></rect>
+<rect x="356" y="153" width="10" height="3" fill="#C8231B"></rect><rect x="359.5" y="150" width="3" height="10" fill="#C8231B"></rect>
+<rect x="378" y="143" width="9" height="5" rx="1.5" fill="#2C8FE0"></rect>
+<g stroke="#2C8FE0" stroke-width="2" stroke-linecap="round"><line x1="382" y1="139" x2="382" y2="133"></line><line x1="374" y1="141" x2="369" y2="137"></line><line x1="390" y1="141" x2="395" y2="137"></line></g>
+<circle cx="352" cy="181" r="4" fill="#1A1C17"></circle><circle cx="390" cy="181" r="4" fill="#1A1C17"></circle>
+</g>
+<use href="#car" x="410" y="164" width="46" height="20" fill="#8C8C84"></use>
+<use href="#car" x="462" y="164" width="46" height="20" fill="#5D6B7A"></use>
+<use href="#car" x="514" y="164" width="46" height="20" fill="#A0805E"></use>
+</g>
+<g>
+<use href="#car" x="-14" y="184" width="46" height="20" fill="#4E5A55"></use>
+<use href="#car" x="38" y="184" width="46" height="20" fill="#8C8C84"></use>
+<use href="#car" x="90" y="184" width="46" height="20" fill="#5D6B7A"></use>
+<use href="#car" x="142" y="184" width="46" height="20" fill="#9A6B4A"></use>
+<use href="#car" x="194" y="184" width="46" height="20" fill="#6E7A86"></use>
+<use href="#car" x="246" y="184" width="46" height="20" fill="#A0805E"></use>
+<use href="#car" x="298" y="184" width="46" height="20" fill="#4E5A55"></use>
+<use href="#car" x="350" y="184" width="46" height="20" fill="#8C8C84"></use>
+<use href="#car" x="402" y="184" width="46" height="20" fill="#6E7A86"></use>
+<use href="#car" x="454" y="184" width="46" height="20" fill="#9A6B4A"></use>
+<use href="#car" x="506" y="184" width="46" height="20" fill="#5D6B7A"></use>
+</g>
+<g fill="#6F6C60" opacity="0.55">
+<use href="#puff" x="44" y="168" width="22" height="13"></use>
+<use href="#puff" x="206" y="168" width="20" height="12"></use>
+<use href="#puff" x="326" y="166" width="22" height="13"></use>
+<use href="#puff" x="502" y="168" width="20" height="12"></use>
+<use href="#puff" x="128" y="190" width="22" height="13"></use>
+<use href="#puff" x="284" y="190" width="22" height="13"></use>
+<use href="#puff" x="440" y="190" width="22" height="13"></use>
+</g>
+<g stroke="#C8231B" stroke-width="2.4" stroke-linecap="round">
+<line x1="212" y1="160" x2="218" y2="155"></line><line x1="214" y1="166" x2="222" y2="164"></line>
+<line x1="458" y1="160" x2="464" y2="155"></line><line x1="460" y1="166" x2="468" y2="164"></line>
+<line x1="186" y1="182" x2="192" y2="178"></line>
+</g>
+<rect x="0" y="202" width="559" height="3" fill="#8B8877"></rect>
+<rect x="0" y="205" width="559" height="9" fill="#BEBAA2"></rect>
+</svg>
 </header>
 
 <main>
@@ -59,7 +178,7 @@
     <p class="step" style="font-size:15px;margin-bottom:10px"><b>3</b> Read your email, edit anything you like, then press send</p>
     <p class="note" style="margin:0">Your email writes itself as you go and updates every time you tick a box or add something. Adding your own experience in step 2 makes it much stronger: a few lines about your street, your family or your journeys carry real weight with the Council.</p>
   </div>
-  <div class="card" style="background:#eaf6f4;border-color:#bfe3dd;padding:10px 14px">
+  <div class="card" style="background:#E6F2EA;border-color:#BFDCC8;padding:10px 14px">
     <p style="margin:0;font-size:13px"><strong>We don't collect your data.</strong> Nothing you type is stored or seen by us. It goes from your own email to the Council.</p>
   </div>
   <div class="card">
