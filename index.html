@@ -71,6 +71,9 @@
     <p class="step" style="font-size:15px;margin-bottom:10px"><b>3</b> Read your email, edit anything you like, then press send</p>
     <p class="note" style="margin:0">Your email writes itself as you go and updates every time you tick a box or add something. Adding your own experience in step 2 makes it much stronger: a few lines about your street, your family or your journeys carry real weight with the Council.</p>
   </div>
+  <div class="card" style="border:2px solid var(--ink);padding:12px 14px">
+    <p style="margin:0;font-size:15px"><strong>Already objected?</strong> New evidence has come out since the consultation opened. <a href="https://claueuser561.github.io/TT1903-as-corrected-by-Notice-of-Correction-TT1956/amend.html" style="color:var(--accent);font-weight:700">Add it to your objection here</a>. Send it now.</p>
+  </div>
   <div class="card" style="background:#e3efe6;border-color:#b9d3c0;padding:10px 14px">
     <p style="margin:0;font-size:13px"><strong>We don't collect your data.</strong> Nothing you type is stored or seen by us. It goes from your own email to the Council.</p>
   </div>
@@ -79,6 +82,14 @@
       <summary style="font-weight:700;font-size:17px;cursor:pointer">What is the Dalston LTN?</summary>
       <p>A low traffic neighbourhood between the A10, Dalston Lane and Amhurst Road: a 24-hour bus gate on Shacklewell Lane, filters on Foulden, Farleigh, Arcola and Cecilia Roads, turn bans and two School Streets. The aim is to stop cut-through traffic on residential streets, which is a fair goal.</p>
       <p><strong>The problem:</strong> that traffic moves onto Dalston Lane, Amhurst Road, the A10 and Graham Road, where the Council itself describes a "traffic standstill at peak times". The Pembury Circus works have only just finished, and officers say they won't have the data to assess them until December.</p>
+      <p style="margin:0 0 6px"><strong>What the Council's own decision report admits:</strong></p>
+      <ul style="margin:0 0 12px;padding-left:20px">
+        <li>Its traffic model "struggles" with roads nearing full capacity, "such as Graham Road".</li>
+        <li>It predicts 200 to 300 more vehicles in the morning peak hour on Dalston Lane westbound towards Pembury Circus, next to the only monitor in Hackney over the legal NO2 limit in 2024.</li>
+        <li>None of its 23 baseline traffic counts are on Graham, Navarino or Greenwood Road, so it cannot measure traffic pushed onto them.</li>
+        <li>The ambulance service warned the Ridley Road ban would force crews onto Graham Road, which it said "will be taking a significant increase in traffic volume".</li>
+        <li>Bus journey times were checked only for routes 488 and 236, not the 38, 242 or 277 on Graham Road.</li>
+      </ul>
       <p style="margin-bottom:0"><strong>Our ask:</strong> get the data first. Defer these orders until the impact on Hackney Central is known and mitigation is in place.</p>
     </details>
   </div>
@@ -149,7 +160,7 @@ const CONFIG = {
     "dominic.west@hackney.gov.uk",
     "paul.davis@hackney.gov.uk"
   ],
-  deadline: "4 November 2026",
+  deadline: "13 November 2026",
   campaignCc: "",            // optional residents' group address for counting; blank hides it
   includeFoi: true           // FOI 42720749 point: set false if you'd rather not use it
 };
@@ -164,7 +175,7 @@ const SOURCES = {
   streetscene:"Hackney Council Streetscene team, by email to a resident, 31 July 2026",
   faqs:      "Hackney Council, 'Reimagining Amhurst Road' FAQs, consultation.hackney.gov.uk",
   booklet:   "Hackney Council, Dalston Liveable Neighbourhood consultation booklet (2025)",
-  s620:      "Officer Key Decision HCE S620, Dalston Liveable Neighbourhood, 13 February 2026 (reported in Hackney Citizen, 22 October 2026)",
+  s620:      "Officer Key Decision HCE S620, Dalston Liveable Neighbourhood, 13 February 2026 (Officer Executive Decisions public reports pack), with the consultation report it relies on (Field Sauce Ltd, 2025)",
   hub:       "Hackney Council, Dalston Liveable Neighbourhood consultation page and FAQs, consultation.hackney.gov.uk",
   pembury:   "Hackney Council, Amhurst Road and Pembury Circus transformation pages (works began 17 February 2025; bus gate closure in force from early January 2026)",
   greens:    "Hackney Green Party, response to the Dalston Liveable Neighbourhood consultation (2025)",
@@ -187,6 +198,15 @@ const SOURCES = {
   coll:      "Hackney Council, Freedom of Information response ref. 44363142, 30 April 2026, p.1 (TfL validated collision data, 30 Nov 2020 to 30 Nov 2025)",
   aq:        "Hackney Council, Environmental Information Regulations response ref. 49903957, 8 October 2026, p.2 ('Health impact or exposure assessments')",
   tfl:       "Transport for London, FOI responses FOI-4203-2526 (17 Feb 2026), FOI-4475-2526 (23 Mar 2026, Q1 and Q4) and internal review IRV-211-2526 (31 Mar 2026)",
+  gmaps:     "Residents' log of Google Maps live traffic colours on Graham Road, Greenwood Road and Dalston Lane, recorded alongside the Greenwood Road camera over 12 days, autumn 2026 (51 jams; indicative)",
+  junctions: "Residents' observations of the Graham Road, Navarino Road and Greenwood Road junctions, Heart of Hackney residents' group, November 2026",
+  tfl38:     "Transport for London, '19 and 38 bus routes restructure' consultation and outcome, haveyoursay.tfl.gov.uk/bus-routes-19-38 (2026)",
+  timeout38: "Time Out London, '13 London bus routes are getting reduced', 26 March 2026, reporting TfL's confirmation of the route 38 changes",
+  deput:     "Hackney Council Cabinet minutes, deputation 'Impact of traffic schemes on Graham Road and call for urgent investment' (Graham, Navarino and Greenwood Road residents), hackney.moderngov.co.uk agenda item 47538",
+  ltnpet:    "Hackney Council Cabinet, 26 January 2026: petition 'Call for Pause and Reassessment of Low Traffic Neighbourhood Schemes and Road Closures in Hackney' (over 1,000 signatures, 500+ impact statements)",
+  council28: "Hackney Full Council minutes, 28 January 2026, item 7: questions from members of the public (bus journey times)",
+  dlntech:   "Officer Key Decision HCE S620 report, 13 February 2026: Table 4.1 (baseline counts), Tables 4.3–4.4 and Figure 4.6 (collisions), paras 4.36, 4.50 and 4.53 (buses, air quality), Table 6.3 (emergency services), Table 6.8, paras 7.22, 7.37 and 7.40 (TfL modelling)",
+  tsurvey:   "Officer Key Decision HCE S620 report, paras 4.66–4.75 and Table 4.12: business and market trader travel surveys (2023)",
   petition:  "Hackney Council ePetition 'Impact of Amhurst Road Bus Gate and other traffic measures' (9 June–1 September 2026, 149 signatures)"
 };
 
@@ -207,6 +227,7 @@ const PERSONAS = [
       "I trade at Ridley Road Market. Our vans arrive early and leave loaded at the end of the day, and the new left-turn ban for vehicles leaving Ridley Road onto Dalston Lane{c:booklet} means longer detours through roads that are already jammed. The Council's decision report includes travel surveys of market traders{c:s620}, but I have seen no assessment of what these orders will do to the market's trade.",
       "As a Ridley Road trader, I depend on customers reaching the market and on suppliers getting in and out. The Council says all existing access points and parking spaces will remain{c:booklet}, but access is not much use if the roads around the market are gridlocked. The Council's own documents already describe a traffic standstill at peak times on Graham Road{c:faqs}, and this scheme sends more traffic onto it and Dalston Lane.",
       "I work on Ridley Road Market. The Ridley Road turn ban was the most closely divided measure in the consultation: 45% opposed it and 44% supported it{c:s620}. A measure that directly affects the market should not go ahead on that basis without a business impact assessment and without traders being properly heard.",
+      "The Council's own travel survey found Dalston Lane is the main way in and out for market traders and for local businesses (53% of business operators){c:tsurvey}. Yet the left-turn ban cuts the Ridley Road exit onto Dalston Lane. Only 43 market traders were even sent the survey{c:tsurvey}, and traders barely featured among the 1,136 consultation respondents{c:report25}.",
       "Market trading is already hard, and every extra minute of detour or delay costs us time and fuel. The Ridley Road ban exists to stop a shortcut between the A10 and Pembury Circus{c:hub}, so its effect depends on the Amhurst Road changes, and the Council has no post-scheme data on those yet{c:izzy}. Traders should not be asked to carry that risk blind."
     ]},
   { id:"boundary", label:"I live on a main or boundary road", hint:"Graham Rd, Greenwood Rd, Navarino Rd, Dalston Lane, Amhurst Rd, A10",
@@ -215,6 +236,7 @@ const PERSONAS = [
       "I live on {street}. When the Council approved the Amhurst Road bus gate, its own report predicted displacement onto Graham Road and Navarino Road and promised that mitigation would be 'an important part of the follow up'{c:s382}. That follow-up never came, and now another scheme is being added.",
       "I live on {street}, which already carries traffic displaced by earlier schemes. The Council has itself recognised that Graham Road saw an impact after the London Fields LTN{c:faqs}, yet the mitigation that followed has still not been delivered.",
       "As a resident of {street}, I live with the traffic these orders are designed to move. The Council's own traffic counts, released under Freedom of Information, show traffic up 48% on Graham Road, 123% on Greenwood Road and 162% on Navarino Road since 2024, while it fell across Hackney{c:counts}. If the Council disputes these figures, it should publish its own counts for these roads.",
+      "I live on {street}, and I watch the queues form every day. Residents logging Google Maps alongside a camera found Graham Road jams first in 45 of 51 cases, and when it does, Greenwood Road usually follows within half an hour{c:gmaps}. Adding more traffic to Graham Road means more traffic on every street around it.",
       "The Council's own monitoring found traffic up on Graham Road and Dalston Lane after the London Fields LTN{c:lfltn}. Living on {street} means living with decisions made for the benefit of streets inside LTN boundaries. Even Hackney Green Party's own consultation response recorded residents' fears that this scheme will worsen congestion on Graham Road and Dalston Lane{c:greens}."
     ]},
   { id:"breathing", label:"Someone in my household has asthma or a breathing condition", hint:"Air quality, queuing traffic",
@@ -248,6 +270,7 @@ const PERSONAS = [
       "I take the bus on Graham Road, where the Council's own modelling accepted that 'bus journey times do increase'{c:s382}. More displaced traffic will make my journeys slower and less reliable still.",
       "I rely on the buses along Graham Road and Dalston Lane every day. When these roads jam, my bus jams with them. Displacing more traffic onto bus corridors works directly against the scheme's stated aim of better public transport.",
       "As a bus user, I already lose time in queues on Graham Road. TfL's own bus team warned that the Cecilia Road filters would remove a diversion route{c:s620}, so when something goes wrong, services will have nowhere else to go.",
+      "I rely on the 38 along Graham Road. TfL says the route is not meeting its reliability targets{c:tfl38}, and its changes will reportedly halve the 38 on Graham Road from 12 to six buses an hour{c:timeout38}. Fewer buses stuck in more traffic is the opposite of what this scheme promises.",
       "I don't drive, and I depend on the 38, 242 and 277 along Graham Road. The Council's own figures put it at over 45 buses an hour in each direction, carrying up to 4,000 passengers an hour{c:busprio}. Slower, less reliable buses hit people with no alternative hardest, and the Council has not shown it has assessed bus journey times on the network as it now stands."
     ]},
   { id:"cyclist", label:"I cycle on local main roads", hint:"Graham Rd, Dalston Lane, Amhurst Rd",
@@ -295,7 +318,7 @@ const SUBJECTS = [
 ];
 const GREETINGS = ["Dear Assistant Director, Streetscene,","Dear Sir or Madam,","Dear Streetscene team,","To the Assistant Director, Streetscene,"];
 const OPENERS = [
-  "Please log this email as my formal objection to the Dalston Liveable Neighbourhood Traffic Orders (ref. TT1903), and to every order proposed under it, as advertised for consultation from 15 October to 4 November 2026. I live{street_on}.",
+  "Please log this email as my formal objection to the Dalston Liveable Neighbourhood Traffic Orders (ref. TT1903), and to every order proposed under it, as advertised from 15 October 2026, as corrected by Notice of Correction TT1956 (29 October 2026). I live{street_on}.",
   "I object to the proposed Dalston Liveable Neighbourhood Traffic Orders (ref. TT1903), including the Shacklewell Lane bus gate, the Foulden Road, Farleigh Road and Cecilia Road filters, and the Ridley Road and Dalston Lane turn bans. I set out my grounds below. I live{street_on}.",
   "As a local resident{street_on}, I wish to formally object to the Dalston Liveable Neighbourhood Traffic Orders (ref. TT1903). Under the 1996 Procedure Regulations, I ask that each ground below be considered before any order is made.",
   "I am writing to object to the Dalston Liveable Neighbourhood scheme (ref. TT1903) and every Traffic Order proposed under it. I live{street_on} and will be directly affected by displaced traffic."
@@ -370,16 +393,28 @@ const GROUNDS = {
     "Article 8 rights: the benefits of quieter streets inside the scheme cannot simply be assumed to outweigh the harm to residents just outside it. That harm has not been assessed for Graham Road, Dalston Lane, Navarino Road or Greenwood Road."
   ],
   sandwich: [
+    "Officers expect traffic to use Graham Road: responding to residents, the decision report accepts that some journeys 'will be more difficult' and 'may involve Graham Road', adding that 'in other LTN locations these new routes have become normalised'{c:dlntech}. Graham Road and its side streets should not be expected to 'normalise' yet more traffic.",
     "Streets caught between schemes: Navarino Road and Greenwood Road sit between this scheme to the north and the London Fields LTN to the south. With new turn bans at Ridley Road and Cecilia Road pushing traffic onto Dalston Lane and Graham Road, these narrow residential streets are the obvious links between the two, and some of that traffic will use them. The combined effect on these streets and on Graham Road has not been assessed.",
     "Rat-running between schemes: since the Amhurst Road bus gate, Navarino and Greenwood Roads have become shortcuts between Dalston Lane and Graham Road. The Council's own decision report predicted 'displacement along Graham Road and Navarino Road'{c:s382}. This scheme adds pressure on Dalston Lane without assessing what that means for those streets or for Graham Road."
   ],
+  bottleneck: [
+    "The Council already knows where the problem is: its own Amhurst Road FAQs say it is looking at how reconfiguring Graham Road's junction with Dalston Lane could 'alleviate traffic delays along Graham Road at peak times', but that it has no funding for it{c:faqs}. Residents' logs show Graham Road is the first road to jam in 45 of 51 cases{c:gmaps}. That fix should come before any scheme that adds traffic.",
+    "Graham Road is the bottleneck: residents logging Google Maps traffic alongside the Greenwood Road camera over 12 days found Graham Road turned red first in 45 of 51 jams (15 of the 16 longer ones), and Dalston Lane only once. When Graham Road was already red, Greenwood Road jammed within half an hour about 70% of the time, against about 14% when both were clear{c:gmaps}. Any scheme that adds traffic to Graham Road will spill straight onto the side streets.",
+    "Entry and exit imbalance: residents point out that traffic can enter Graham Road from Queensbridge Road, from Dalston Lane in both directions, and via Navarino Road and Greenwood Road, which connect it to Dalston Lane with no filter, but is funnelled into a single permitted exit at the other end. Queues also build behind lines of vehicles turning right into Navarino Road{c:junctions}. I ask the Council to assess this imbalance and explain how any change would avoid simply pushing traffic onto Navarino and Greenwood Roads.",
+    "Graham Road jams first: in a 12-day residents' log, Graham Road went red about 30 minutes before Greenwood Road stopped, and was the first road to jam in 45 of 51 cases{c:gmaps}. Keeping Graham Road moving is the key to protecting the side streets, yet this scheme adds traffic to it before the Council has assessed it."
+  ],
   buses: [
+    "Bus impacts were not assessed where it matters: the decision report measures bus journey times only for routes 488 and 236 inside the scheme area{c:dlntech}. It does not assess the 38, 242 or 277 on Graham Road, or the buses on Dalston Lane, where the model predicts more traffic.",
+    "Bus journey times: the Council told residents it did not expect the Amhurst Road scheme to have a significant impact on bus journey times and that it would optimise signals on alternative routes{c:faqs}, yet its own decision report accepted that bus journey times increase on Graham Road{c:s382}. At Full Council in January 2026, a resident asked why buses were now slower because traffic had been re-routed onto bus routes{c:council28}. The Council should publish bus journey times for Graham Road before adding more traffic.",
     "Nobody is responsible for the bus stop: TfL says it owns the Greenwood Road bus stop on Graham Road and is responsible for safety when routes change, but it has carried out no road safety audit, modelling or assessment there{c:tfl}. The Council holds no assessment of the stop and no correspondence with TfL about the junction{c:foi}. More traffic should not be added until someone takes responsibility.",
     "Buses: the Council's own Amhurst Road decision report accepted that 'bus journey times do increase, such as on Graham Road'. TfL endorsed that scheme only on condition that wider mitigation be considered 'to protect bus speeds where they might deteriorate'{c:s382}. Adding more displaced traffic before that mitigation exists will make Graham Road buses slower still.",
     "Buses: Graham Road carries the 38, 242 and 277, with over 45 buses an hour each way and up to 4,000 passengers an hour{c:busprio}. The main roads taking displaced traffic are key bus corridors. TfL's bus team warned that the Cecilia Road filters would remove a diversion route{c:s620}. I have seen no assessment of bus journey times on the network as it now stands.",
+    "Buses on Graham Road are already struggling: TfL says route 38 is not meeting its reliability targets{c:tfl38}, and it has confirmed changes that, as reported, halve the 38 on Graham Road from 12 to six buses an hour in the daytime{c:timeout38}. With fewer buses, every delay caused by displaced traffic hits passengers harder. The Council's own Amhurst Road report already accepted that bus journey times on Graham Road would increase{c:s382}.",
+    "Bus reliability: route 38, which runs along Graham Road, is not meeting TfL's reliability targets{c:tfl38}. Graham Road is the first road to jam in the local network, turning red first in 45 of 51 jams logged by residents{c:gmaps}. Adding displaced traffic to it will make the buses less reliable still. I ask the Council to publish route journey times for the 38, 242 and 277 before and after the Amhurst Road bus gate.",
     "Public transport: congestion pushed onto boundary roads slows the buses on them. TfL's bus team has already raised concerns about lost diversion routes{c:s620}. Slowing buses works directly against the scheme's stated aims."
   ],
   emergency: [
+    "Emergency services: the London Ambulance Service told the Council that the Ridley Road ban would force crews to 'travel down and turn left into Graham Road, which will be taking a significant increase in traffic volume due the Hackney Central traffic scheme', reducing ambulance availability for 999 calls{c:dlntech}. The Council kept the ban.",
     "Emergency services: the London Ambulance Service objected that the Ridley Road ban would push crews taking patients to Homerton onto Graham Road and 'reduce overall ambulance availability locally to respond to 999 calls'{c:s620}. The Council kept the ban. Exemptions at the filters do not help an ambulance stuck in displaced traffic.",
     "Emergency response: both the ambulance service and the Metropolitan Police raised concerns about response times{c:s620}. The impact on response times on Graham Road and Dalston Lane must be quantified, using current data, before any order is made."
   ],
@@ -388,6 +423,7 @@ const GROUNDS = {
     "Noise pollution: the Council itself describes a peak-time 'traffic standstill' on Graham Road{c:faqs}. Adding more traffic will increase noise for residents, and this has not been assessed."
   ],
   environment: [
+    "Air quality: the Council's Delta Dalston Lane monitor, just west of Pembury Circus, was the only site in Hackney to exceed the legal NO2 objective in 2024, even though modelling had predicted a fall there{c:dlntech}. The TfL model for this scheme predicts 200 to 300 more vehicles in the morning peak on that same stretch of Dalston Lane{c:dlntech}. A dedicated Graham Road monitor was installed in November 2024, but its results are not reported{c:dlntech}.",
     "No health assessment: the Council confirms the only health or exposure assessment covering Graham Road since 2022 is the air quality modelling done before the Amhurst Road scheme{c:aq}. Nothing has assessed the traffic since displaced onto Graham, Greenwood and Navarino Roads, or what these orders would add. A health impact assessment should come first.",
     "Stop-start pollution: University of Leeds research found that slow, stop-start traffic produces much higher emissions than free-flowing traffic, with most of a journey's excess emissions coming from short congested sections{c:leeds}. University of York research found that constant congestion in London stops diesel exhaust treatment working properly, even on ULEZ-compliant vehicles{c:york}. Pushing more traffic into queues on boundary roads concentrates pollution where people live.",
     "Air quality: Dalston Lane already has some of the highest nitrogen dioxide readings in the borough, and modelling for this scheme predicts more westbound traffic on it{c:s620}. A scheme that cuts emissions on some streets by raising them on others is not an environmental improvement.",
@@ -403,6 +439,9 @@ const GROUNDS = {
     "Public Sector Equality Duty: disabled people, carers and older residents opposed the key measure by wide margins{c:s620}. Their views, and the impact of displaced traffic on residents outside the scheme area, must be properly assessed before any decision."
   ],
   process: [
+    "Displacement cannot be measured: the scheme's 23 baseline traffic counts (November 2024) include no count on Graham Road, Navarino Road or Greenwood Road{c:dlntech}. Without a before count, the Council cannot show whether this scheme pushes traffic onto them. Baseline counts on these roads must be taken before any order is made.",
+    "Promises to residents not followed through: when Graham, Navarino and Greenwood Road residents brought a deputation to Cabinet, the Cabinet Member promised a written reply with the traffic data they had asked for, said monitors would be reinstated on Greenwood and Navarino Roads, and said TfL funding was being sought for Graham Road, with no timescale given{c:deput}. The Council has since said in writing that there is 'no funding secured and no approved programme' for Graham Road{c:streetscene}. New schemes should not come before existing commitments are met.",
+    "Monitoring promised but not reported: in January 2026 Cabinet heard a petition of over 1,000 signatures calling for a pause and review of LTNs, and the Cabinet Member committed to keep monitoring impacts and report back{c:ltnpet}. I have seen no such report for Graham Road or its side streets. The Council should publish it before adding another scheme.",
     "Missing data: the Council's 2024 decision report says it installed 'two permanent traffic counters on both Navarino and Greenwood Road to monitor traffic displacement 24/7'{c:s382}, yet it has told a resident it holds no traffic data for the Graham Road/Greenwood Road junction{c:foi}. That data should be published and assessed before these orders are decided.",
     "Transparency: at the September residents' meeting, the Cabinet Member confirmed that traffic modelling for the 2020 LTNs was done internally and said he would be keen to make it, and other traffic data, publicly available. The Council also committed to publish the data it collects more regularly{c:minutes}. That data, and the independent review of results the Cabinet Member referred to{c:minutes}, should be published before any new orders are made.",
     "Resident concern is on the record: 149 people signed the Council's own ePetition calling for the cumulative impact on Graham, Navarino and Greenwood Roads to be reviewed before any further traffic measures{c:petition}. The Council's own engagement boards also recorded concerns about impacts on Graham Road and Dalston Lane{c:boards}. Those concerns have not been answered.",
@@ -410,11 +449,14 @@ const GROUNDS = {
     "Fairness of the process: the Ridley Road turn ban was opposed by 45% and supported by 44%{c:s620}. Boundary-road residents, who will carry the displaced traffic, are the people least represented in a consultation focused on streets inside the scheme."
   ],
   cumulative: [
+    "The Council admits its model cannot handle Graham Road: the decision report says the TfL model 'struggles to accurately simulate traffic flow on roads nearing full capacity (such as Graham Road)', and that uncertainty is increased by adjacent schemes 'whose final traffic impacts are unknown'{c:dlntech}. Orders should not be made on modelling the Council itself says is unreliable for the roads most at risk.",
+    "The Council's own modelling shows more traffic on Dalston Lane: the TfL model's AM peak flow difference plot predicts more traffic on Dalston Lane westbound approaching Pembury Circus, shown as an increase of 200 to 300 vehicles in the 08:00–09:00 peak hour{c:dlntech}. The public consultation page described only 'a very small increase' on Dalston Lane westbound{c:hub}. Greenwood and Navarino Roads connect that stretch of Dalston Lane to Graham Road, and the knock-on effect on them has not been assessed.",
     "The last forecast was wrong: when it approved the Amhurst Road bus gate, the Council predicted a 24% fall in peak traffic at the Graham Road/Mare Street junction and 'a reduction in the amount of queuing traffic along Graham Road'{c:s382}. Instead, its own counts show traffic on Graham Road at Massie Road rising between July 2024 and October 2025, and over 21,000 vehicles a day east of Navarino Road{c:foi}. The impact of these orders must not rest on similar untested assumptions.",
     "Cumulative impact: the Ridley Road ban exists to stop traffic shortcutting between the A10 and Pembury Circus{c:hub}, so the two schemes plainly interact. One cannot be decided without data on the other, and that data will not exist until December at the earliest{c:izzy}.",
     "Cumulative effects: Dalston is still absorbing the Pembury Circus works, utility works and earlier LTNs all at once. The orders must be judged against the network as it will be after those works, which officers say they cannot yet measure{c:izzy}."
   ],
   safety: [
+    "The scheme's collision study stops at Dalston Lane: its map of injury collisions on boundary roads (2020–2024) covers the A10, Amhurst Road and Dalston Lane, including serious collisions towards Hackney Downs, but not Graham Road, Navarino Road or Greenwood Road{c:dlntech}. These are the streets that take traffic from Dalston Lane. A safety assessment should cover them before any order is made.",
     "Collisions are rising: police records show 13 collisions at the Graham Road/Greenwood Road junction since 2020, ten of them since 2024, including a pedestrian seriously injured in 2024 and a cyclist seriously injured in 2025; six were hit-and-runs{c:met}. The Council confirms it holds no road safety audit for that junction{c:foi}. Adding displaced traffic before a safety audit is unacceptable.",
     "Serious injuries: the Council's own collision search found two serious-injury collisions within 40 metres of the Graham Road/Greenwood Road junction in five years{c:coll}, and police have recorded 11 allegations of careless or inconsiderate driving on Graham and Greenwood Roads{c:met}. No safety audit has been carried out there{c:foi}. These orders would add traffic to that junction.",
     "Pavement safety: a resident's camera count on Greenwood Road (18–30 October 2026) found 40% of cyclists rode on the pavement when the road was jammed, against 7% when traffic flowed (280 of 702 against 174 of 2,364){c:camera}. In the school-term week, the road was jammed for an average of 47 minutes in every hour between 15:00 and 16:00, just as children walk home{c:camera}. More displaced traffic means more jams and more bikes on narrow pavements.",
@@ -584,7 +626,7 @@ if(typeof document !== "undefined" && document.getElementById("personas")){
   $("to").value = CONFIG.to;
   $("ccList").value = CONFIG.cc.join(", ");
   if(CONFIG.campaignCc) $("ccWrap").style.display = "flex";
-  $("deadlineNote").textContent = `Objections must arrive by ${CONFIG.deadline} and must give your grounds (this email does).`;
+  $("deadlineNote").textContent = `The Council's Notice of Correction (TT1956, 29 October) corrected this order and allows objections to either Order within 28 days, to 26 November. The Council says the Dalston consultation closed on 4 November; we dispute this. Send now, ideally by ${CONFIG.deadline}. Objections must give your grounds (this email does).`;
 
   document.querySelectorAll('input[name="mode"]').forEach(r => r.addEventListener("change", () => { if(!dirty) generate(); else { armed = true; $("regen").textContent = "Rewrite to include changes (replaces edits)"; } }));
   ["name","street","postcode","own"].forEach(id => $(id).addEventListener("input", () => { if(!dirty) generate(); }));
