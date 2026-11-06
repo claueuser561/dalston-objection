@@ -578,6 +578,7 @@ function cite(text){
   return { out, refs };
 }
 
+const TIMELY = "This objection is made in time. The Council's Notice of Correction (TT1956), published online and in the Islington Gazette, states that 'the correct statutory consultation period should be 28 days ending 13th November 2026', and that objections 'about either of the Orders' should be sent 'within 28 days from the date on which this Notice is published'{c:tt1956}. Residents are entitled to rely on what the Council has published. If the published notice differs from the Council's internal documents, as the Cabinet Member has since suggested, that is the Council's error, not residents'. The Council has now given three different closing dates (4, 13 and 26 November), and I ask that this objection be accepted and considered under regulation 13 of the Local Authorities' Traffic Orders (Procedure) (England and Wales) Regulations 1996.";
 function buildEmail(tickedIds, street, name, addr, own, mode){
   const cond = mode === "conditional";
   const ticked = PERSONAS.filter(p => tickedIds.includes(p.id));
@@ -588,6 +589,7 @@ function buildEmail(tickedIds, street, name, addr, own, mode){
   };
   const P = [];
   P.push(fill(pick(cond ? OPENERS_COND : OPENERS), v));
+  P.push(TIMELY);
   shuffle(ticked).forEach(p => P.push(fill(pick(p.lines), v)));
   const ownTidy = polishOwn(own || "");
   if(ownTidy) P.push(pick(OWN_LEADS) + " " + ownTidy);
