@@ -89,6 +89,7 @@
         <li>None of its 23 baseline traffic counts are on Graham, Navarino or Greenwood Road, so it cannot measure traffic pushed onto them.</li>
         <li>The ambulance service warned the Ridley Road ban would force crews onto Graham Road, which it said "will be taking a significant increase in traffic volume".</li>
         <li>Bus journey times were checked only for routes 488 and 236, not the 38, 242 or 277 on Graham Road.</li>
+        <li>It proposes lifting the ban on turning right from Shacklewell Lane onto the A10, opening a new route north via Dalston Lane and Ridley Road that Graham and Navarino Roads will feed. No traffic modelling has been done.</li>
       </ul>
       <p style="margin-bottom:0"><strong>Our ask:</strong> get the data first. Defer these orders until the impact on Hackney Central is known and mitigation is in place.</p>
     </details>
@@ -215,7 +216,9 @@ const SOURCES = {
   ibus:      "Precedents: Croydon Council TMAC data supplement (December 2020) using TfL iBus stop-to-stop arrival times on LTN boundary roads; TfL FOI 0842-2122 (Dulwich LTN), bus corridor delay threshold of three or more consecutive weeks",
   tt1956:    "London Borough of Hackney, Notice of Correction TT1956, dated 29 October 2026 (published in the Islington Gazette), correcting TT1903 Dalston Liveable Neighbourhood phase 1 and TT1905: https://publicnoticeportal.uk/notice/traffic-and-roads/6ae471b3a433f635757e8d2e",
   shop:      "Residents' conversation with the owner of an antique shop on Amhurst Road, E8, November 2026 (owner's account; business not named)",
-  petition:  "Hackney Council ePetition 'Impact of Amhurst Road Bus Gate and other traffic measures' (9 June–1 September 2026, 149 signatures)"
+  petition:  "Hackney Council ePetition 'Impact of Amhurst Road Bus Gate and other traffic measures' (9 June–1 September 2026, 149 signatures)",
+  a10turn:   "Officer Key Decision HCE S620, Dalston Liveable Neighbourhood, 13 February 2026, recommendation K: 'Agree to enter discussions with TfL for permanent revocation of west to north right turn restriction from Shacklewell Lane to Kingsland Road' (hackney.moderngov.co.uk, agenda item 48242)",
+  a10model:  "Hackney Council, reply to a resident on the Shacklewell Lane right turn, shared with the Heart of Hackney residents' group, November 2026"
 };
 
 /* =====================================================================
@@ -474,6 +477,11 @@ const GROUNDS = {
     "Cumulative impact: the Ridley Road ban exists to stop traffic shortcutting between the A10 and Pembury Circus{c:hub}, so the two schemes plainly interact. One cannot be decided without data on the other, and that data will not exist until December at the earliest{c:izzy}.",
     "Cumulative effects: Dalston is still absorbing the Pembury Circus works, utility works and earlier LTNs all at once. The orders must be judged against the network as it will be after those works, which officers say they cannot yet measure{c:izzy}."
   ],
+  a10turn: [
+    "A new through-route onto the A10, with no modelling: the decision report commits the Council to ask TfL to permanently lift the ban on turning right from Shacklewell Lane onto the A10{c:a10turn}. That opens a through-route north: Dalston Lane → Ridley Road → St Mark's Rise → Shacklewell Lane → A10. For drivers coming from Mare Street, Homerton or Hackney Central, the obvious way into it is along Graham Road and Navarino Road to Dalston Lane. Once the Shacklewell Lane bus gate is in place, Dalston Lane via Ridley Road becomes the only way into this route from the east, so the pressure will only grow. The Council has confirmed to residents that this is the plan, but says it has done no traffic modelling of the impact and will instead 'monitor closely'{c:a10model}. This must be modelled, and its effect on Graham Road, Navarino Road and Dalston Lane assessed, before TfL is asked to approve it.",
+    "The Shacklewell Lane right turn: a small-looking change in the scheme, lifting the ban on turning right from Shacklewell Lane onto the A10{c:a10turn}, creates a new northbound rat-run via Ridley Road and St Mark's Rise. Dalston Lane becomes the way in, on top of the extra traffic the Council's own model already predicts there{c:dlntech}, and Graham Road and Navarino Road become the natural feeder from Mare Street and Homerton. The Council has told residents it has done no traffic modelling of this change{c:a10model}. 'Monitor closely' after the event is not an assessment.",
+    "An unassessed rat-run through Navarino Road: if TfL agrees to lift the right-turn ban from Shacklewell Lane onto the A10, as the decision report proposes{c:a10turn}, traffic heading north from Hackney Central will have a new shortcut: Graham Road, Navarino Road, Dalston Lane, Ridley Road, St Mark's Rise and Shacklewell Lane. When the Shacklewell Lane bus gate opens, this will be the only way into that route from the east. The Council has confirmed the plan but has done no modelling of its impact{c:a10model}. I ask the Council to model it, publish the results, and address the impact on Graham Road, Navarino Road and Dalston Lane before asking TfL to approve anything."
+  ],
   safety: [
     "The scheme's collision study stops at Dalston Lane: its map of injury collisions on boundary roads (2020–2024) covers the A10, Amhurst Road and Dalston Lane, including serious collisions towards Hackney Downs, but not Graham Road, Navarino Road or Greenwood Road{c:dlntech}. These are the streets that take traffic from Dalston Lane. A safety assessment should cover them before any order is made.",
     "Collisions are rising: police records show 13 collisions at the Graham Road/Greenwood Road junction since 2020, ten of them since 2024, including a pedestrian seriously injured in 2024 and a cyclist seriously injured in 2025; six were hit-and-runs{c:met}. The Council confirms it holds no road safety audit for that junction{c:foi}. Adding displaced traffic before a safety audit is unacceptable.",
@@ -605,7 +613,8 @@ function buildEmail(tickedIds, street, name, addr, own, mode){
 
   const skip = new Set(ticked.flatMap(p => PERSONA_SKIPS[p.id] || []));
   if(!CONFIG.includeFoi || useFoi) skip.add("safety");
-  const keys = shuffle(Object.keys(GROUNDS).filter(k => !skip.has(k))).slice(0, 3);
+  const forced = ticked.some(p => p.id === "boundary") ? ["a10turn"] : [];
+  const keys = forced.concat(shuffle(Object.keys(GROUNDS).filter(k => !skip.has(k) && !forced.includes(k))).slice(0, 3 - forced.length));
   P.push(pick(["I also object on the following further grounds:","My objection also rests on these further grounds:","There are further grounds for objection:"]));
   keys.forEach(k => P.push("• " + pick(GROUNDS[k])));
 
